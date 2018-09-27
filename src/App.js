@@ -18,7 +18,8 @@ var config = {
     constructor(props) {
       super(props);
       this.state = {
-        rooms: []
+        rooms: [],
+        newRoomName: ''
       };
     }
      render() {
