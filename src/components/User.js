@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import '.././styles/User.css';
 
 class User extends Component {
 
@@ -21,7 +21,7 @@ class User extends Component {
   render() {
     return (
       <section className="user-display">
-        <div className="user-display-name">{ this.props.user ? this.props.user.displayName : '' }</div>
+        <div className="user-display-name">{ this.props.user ? this.props.user.displayName : ' ' }</div>
         <button className="sign-in-out" onClick={ this.props.user ? this.signOut.bind(this) : this.signIn.bind(this) }>
           <span>Sign { this.props.user ? 'out' : 'in' }</span>
         </button>
