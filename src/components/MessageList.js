@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '.././styles/MessageList.css';
+
 class Messages extends Component {
   constructor (props) {
     super(props)
@@ -15,9 +16,9 @@ class Messages extends Component {
     this.messagesRef.on('child_added', snapshot  => {
       const message = snapshot.val();
       message.key = snapshot.key;
-      this.setState({ allMessages: this.state.allMessages.concat( message ) }, () => {
-        this.showMessages( this.props.activeRoom )
-      });
+      console.log(message.roomId,this.props.activeRoom.key);
+      this.setState({ allMessages: this.state.allMessages.concat( message )})
+
     });
   }
 
@@ -36,21 +37,22 @@ class Messages extends Component {
   render() {
     return (
       <main id="messages-component">
-      <h2 className="room-name">{ this.props.activeRoom ? this.props.activeRoom.name : '' }</h2>
-      <ul id="message-list">
-      {this.state.displayedMessages.map( message =>
-        <li key={message.key}>
-        <div className="username">
-        { message.username }
-        </div>
-        <div className="content">
-        { message.content }
-        </div>
-        </li>
-      )}
-      </ul>
+        <h2 className="room-name">{ this.props.activeRoom ? this.props.activeRoom.name : '' }</h2>
+        <ul id="message-list">
+          {this.state.allMessages.filter( message => message.roomId === this.props.activeRoom.key).map( message =>
+            <li key={message.key}>
+              <div className="username">
+                 { message.username }
+              </div>
+              <div className="content">
+                 { message.content }
+              </div>
+            </li>
+          )}
+        </ul>
       </main>
     );
   }
 }
+
 export default Messages;

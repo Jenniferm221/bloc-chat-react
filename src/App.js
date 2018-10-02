@@ -20,23 +20,24 @@ var config = {
     constructor(props) {
       super(props);
       this.state = {
-        activeroom: null,
-      };
-    }
-
-    setActiveRoom(room) {
-    this.setState({activeRoom: room});
+        activeRoom: null,
+    };
   }
-     render() {
-      return (
-        <div className="App">
-        <aside id="sidebar">
-         <h1 className="App-title">Bloc Chat</h1>
-         <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom.bind(this)} />
-       </aside>
-       <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
-    </div>
-  );
+
+  setActiveRoom(room) {
+   this.setState({activeRoom: room});
+ }
+
+ render() {
+   return (
+     <div className="App">
+     <aside id="sidebar">
+       <h1 className="App-title">Bloc Chat</h1>
+       <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom.bind(this)} />
+     </aside>
+     <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
+   </div>
+ );
 }
 }
 
