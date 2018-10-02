@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
+import User from './components/User.js';
 import * as firebase from "firebase";
 import RoomList from "./components/RoomList.js";
 import MessageList from './components/MessageList.js';
+
 
 
 var config = {
@@ -18,14 +20,19 @@ var config = {
 
   class App extends Component {
     constructor(props) {
-      super(props);
+      super(props)
       this.state = {
         activeRoom: null,
+        user: null
     };
   }
 
   setActiveRoom(room) {
    this.setState({activeRoom: room});
+ }
+
+ setUser(user) {
+   this.setState({user: user});
  }
 
  render() {
@@ -35,6 +42,7 @@ var config = {
        <h1 className="App-title">Bloc Chat</h1>
        <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom.bind(this)} />
      </aside>
+     <User firebase={firebase} setUser={this.setUser.bind(this)} user={this.state.user}/>
      <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
    </div>
  );
