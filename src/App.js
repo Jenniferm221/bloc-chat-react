@@ -44,12 +44,12 @@ var config = {
      <div className="App">
      <aside id="sidebar">
      <h1 className="App-title">Bloc Chat</h1>
-     <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom.bind(this)} />
+       <RoomList firebase={firebase} activeRoom={this.state.activeRoom} setActiveRoom={this.setActiveRoom.bind(this)} user={this.state.user}/>
      </aside>
      <aside id="sidebar-bottom">
      <User firebase={firebase} setUser={this.setUser.bind(this)} user={this.state.user}/>
      </aside>
-     <MessageList firebase={firebase} activeRoom={this.state.activeRoom} />
+     <MessageList firebase={firebase} activeRoom={this.state.activeRoom} user={this.state.user}/>
      </div>
    );
  }

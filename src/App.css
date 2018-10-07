@@ -20,7 +20,6 @@
  z-index: 4;
  bottom: 0;
 }
-
 #sidebar button:hover span {
  color: rgb(0, 120, 60);
 }

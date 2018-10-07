@@ -1,3 +1,4 @@
+
 .room-name {
   border:none;
   outline: none;
@@ -8,16 +9,19 @@
   font-size: 1.1rem;
   font-weight: bold;
 }
- .room-name:hover {
+
+.room-name:hover {
   cursor: pointer;
   color: rgb(0, 150, 40);
   background-color: rgba(3, 130, 40, 0.1);
 }
- .room-name:active {
+
+.room-name:active {
   box-shadow: 0 2px;
   transform: translateY(3px);
 }
- form#create-room {
+
+form#create-room {
   margin-right: 0;
   right: 0;
   top: -2px;
@@ -26,11 +30,13 @@
   width: 50%;
   height: 40px;
 }
- #create-room label {
+
+#create-room label {
   font-size: 0.9rem;
   font-weight: bold;
 }
- #create-room input[type="text"] {
+
+#create-room input[type="text"] {
   width: 87%;
   background: rgba(0, 150, 40, 0.3);
   padding: 0.3rem 0.66rem;
@@ -40,11 +46,13 @@
   height: 2.5rem;
   float: left;
   font-size: 1rem;
+  font-weight: bold;
 }
- #create-room input[type="submit"] {
+
+#create-room input[type="submit"] {
   border: none;
   padding: 0.1rem;
-  color: rgba(50, 69, 220, 0.5);
+  color: red;
   width: 10%;
   font-size: 1.5rem;
   float: left;
@@ -53,11 +61,13 @@
   margin-left: 3%;
   border-radius: 3px;
 }
- #create-room input[type="submit"]:hover {
+
+#create-room input[type="submit"]:hover {
   cursor: pointer;
   background: rgba(255, 69, 0, 0.2);
 }
- #create-room input[type="submit"]:active {
+
+#create-room input[type="submit"]:active {
   box-shadow: 0 2px;
   transform: translateY(3px);
 }
